@@ -45,4 +45,4 @@ mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOG_FILE
 VALIDATE $? "Password Setup for MySql server"
 
 
-echo "DB MySql Server Installation was going smoothly..Thankyou"
+echo -e "$G DB MySql Server Installation was going smoothly..Thankyou $N"
