@@ -12,7 +12,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [ USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo -e "$R Please Provide Super User Access $N"
     exit 1
