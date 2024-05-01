@@ -70,6 +70,7 @@ VALIDATE $? "Installing required Dependencies"
 
 # vim /etc/systemd/system/backend.service
 cp /home/ec2-user/mysql-db/backend.service /etc/systemd/system/backend.service
+VALIDATE $? "Configuration of Backend to DB connection is : "
 
 
 systemctl daemon-reload &>>$LOG_FILE
