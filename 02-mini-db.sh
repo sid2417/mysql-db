@@ -57,4 +57,5 @@ else
     echo -e "$G You Already setup the Password for mySQL..so, we are skipping now .... $N"
 fi
 
-echo -e "$Y MySQL installation is Going GOOD $N" &>>$LOG_FILE
+
+echo -e "$Y MySQL installation is Going GOOD $N" 
