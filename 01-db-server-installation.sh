@@ -46,3 +46,4 @@ VALIDATE $? "Password Setup for MySql server"
 
 
 echo -e "$G DB MySql Server Installation was going smoothly..Thankyou $N"
+
