@@ -13,7 +13,7 @@ LOG_FILE=/tmp/$SCRIPT_NAME+$TIME_STAMP.log
 
 #UserId
 USER_ID=$(id -u)
-if [ USER_ID -ne 0 ]
+if [ $USER_ID -ne 0 ]
 then 
     echo -e "$R Please Provide SUDO access...$N"
     exit 1
