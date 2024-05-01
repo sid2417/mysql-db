@@ -13,7 +13,7 @@ LOG_FILE=$SCRIPT_NAME+$TIME_STAMP.log
 
 #UserId
 USER_ID=$(id -u)
-if [ USER_ID -ne 0 ]
+if [ $USER_ID -ne 0 ]
 then 
     echo -e "$R Please Provide SUDO access...$N"
     exit 1
@@ -34,16 +34,16 @@ VALIDATE ()
 }
 
 
-dnf install mysql-server -y &>>LOG_FILE
+dnf install mysql-server -y &>>$LOG_FILE
 VALIDATE $? "Installation of mysql server : "
 
-systemctl enable mysqld &>>LOG_FILE
+systemctl enable mysqld &>>$LOG_FILE
 VALIDATE $? "Enabling mysql : "
 
-systemctl start mysqld &>>LOG_FILE
+systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "Starting mysql : "
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOG_FILE
+mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOG_FILE
 VALIDATE $? "Setting up password for mysql is  : "
 
-echo -e "$Y MySQL installation is Going GOOD $N" &>>LOG_FILE
+echo -e "$Y MySQL installation is Going GOOD $N" &>>$LOG_FILE
