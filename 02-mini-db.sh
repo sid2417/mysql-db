@@ -43,7 +43,18 @@ VALIDATE $? "Enabling mysql : "
 systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "Starting mysql : "
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOG_FILE
-VALIDATE $? "Setting up password for mysql is  : "
+
+# mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOG_FILE
+# VALIDATE $? "Setting up password for mysql is  : "
+
+## (mysql -h localhost -uroot -pExpenseApp@1 -e 'SHOW DATABASES;')
+
+mysql -h db.happywithyogamoney.fun -uroot -pExpenseApp@1 -e 'SHOW DATABASES;'
+if [ $? -ne 0 ]
+then 
+    mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOG_FILE
+else 
+    echo -e "$G You Already setup the Password for mySQL..so, we are skipping now .... $N"
+fi
 
 echo -e "$Y MySQL installation is Going GOOD $N" &>>$LOG_FILE
