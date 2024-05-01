@@ -9,7 +9,7 @@ N="\e[0m"
 #Date #ScriptName #Logfile
 TIME_STAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo "$?" | cut -d "." -f1)
-LOG_FILE=$SCRIPT_NAME+$TIME_STAMP.log
+LOG_FILE=/tmp/$SCRIPT_NAME+$TIME_STAMP.log
 
 #UserId
 USER_ID=$(id -u)
