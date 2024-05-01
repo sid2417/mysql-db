@@ -24,7 +24,7 @@ fi
 
 VALIDATE ()
 {
-    if ($1 -ne 0)
+    if [ $1 -ne 0 ]
     then 
         echo -e "$R $2 FAILURE $N"
         exit 1
